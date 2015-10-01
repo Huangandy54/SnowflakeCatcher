@@ -1,4 +1,5 @@
 Snowflake [] storm;
+
 void setup()
 {
   size(500, 500);
@@ -9,13 +10,16 @@ void setup()
 }
 void draw()
 {
+  background(0);
   for (int i = 0; i <storm.length; ++i) {
     storm[i].erase();
     storm[i].lookDown();
     storm[i].move();
     storm[i].wrap();
     storm[i].show();
+    println("x: "+storm[i].x);
   }
+
 }
 void mouseDragged()
 {
@@ -28,8 +32,8 @@ class Snowflake
   boolean isMoving;
   Snowflake()
   {
-    x=(int)Math.random()*500;
-    y=(int)Math.random()*500;
+    x=(int)(Math.random()*500);
+    y=(int)(Math.random()*20);
     isMoving=true;
   }
   void show()
@@ -61,7 +65,7 @@ class Snowflake
   {
     if (y>500) {
       y=0;
-      x=(int)Math.random()*500;
+      x=(int)(Math.random()*500);
     }
   }
 }
