@@ -27,7 +27,7 @@ void mouseDragged()
 {
   //your code here
   noStroke();
-  fill(255,0,0);
+  fill(200,200,200);
   ellipse(mouseX,mouseY,15,15);
 }
 
@@ -52,9 +52,11 @@ class Snowflake
   void lookDown()
   {
     //your code here
-    if(((y>0)&&(y<500))&&(get(x,y+6)==color(255,0,0))) {
+    if(((y>0)&&(y<500))&&(get(x,y+6)==color(200,200,200))) {
       isMoving = false;
-    } else {
+    } 
+    else 
+    {
       isMoving = true; 
     }
   }
@@ -69,7 +71,9 @@ class Snowflake
     //your code here
     if(isMoving == true) {
       y = y+1;
-    } else {
+    } 
+    else 
+    {
       y = y + 0;
     }
   }
